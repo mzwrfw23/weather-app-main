@@ -1,0 +1,396 @@
+@font-face {
+  font-family: 'DM Sans';
+  src: url('./assets/fonts/DM_Sans/DMSans-VariableFont_opsz,wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('./assets/fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf') format('truetype');
+}
+
+:root {
+  --bg-dark: #07071a;
+  --panel-bg: #11112b;
+  --card-bg: #1a1a3a;
+  --accent-blue: #3b82f6;
+  --text-white: #ffffff;
+  --text-muted: #8b8ba7;
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2.5rem 1rem;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-logo {
+  height: 28px;
+}
+
+.units-btn {
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-white);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.units-icon {
+  width: 16px;
+}
+
+.dropdown-arrow {
+  width: 10px;
+  opacity: 0.7;
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.main-title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.search-form {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 580px;
+}
+
+.input-wrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1.2rem;
+  width: 18px;
+  opacity: 0.4;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 0.9rem 1rem 0.9rem 3.2rem;
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  color: var(--text-white);
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.input-wrapper input::placeholder {
+  color: var(--text-muted);
+}
+
+.submit-btn {
+  padding: 0.9rem 1.8rem;
+  background: var(--accent-blue);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1.5rem;
+}
+
+.main-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.current-card {
+  background: linear-gradient(135deg, #3730a3 0%, #1e1b4b 100%);
+  background-image: url('./assets/images/bg-today-large.svg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-left h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.card-left p {
+  color: #a5a5c7;
+  font-size: 0.9rem;
+}
+
+.condition-text {
+  margin-top: 0.8rem;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+.card-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.weather-big-icon {
+  width: 70px;
+  height: 70px;
+}
+
+.big-temp {
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.metrics-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.metric-card {
+  background: var(--panel-bg);
+  padding: 1.2rem;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.m-label {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.m-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-white);
+}
+
+.daily-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.daily-card {
+  background: var(--panel-bg);
+  border-radius: 14px;
+  padding: 1rem 0.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  text-align: center;
+}
+
+.daily-card .day-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #c4c4e0;
+}
+
+.daily-card img {
+  width: 28px;
+  height: 28px;
+}
+
+.daily-card .temp-range {
+  display: flex;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.daily-card .min-temp {
+  color: var(--text-muted);
+}
+
+.sidebar-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.hourly-box {
+  background: var(--panel-bg);
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.hourly-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.hourly-top .section-title {
+  margin-bottom: 0;
+}
+
+.select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.custom-select {
+  appearance: none;
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-white);
+  padding: 0.35rem 1.8rem 0.35rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 0.6rem;
+  width: 10px;
+  pointer-events: none;
+}
+
+.hourly-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 0.3rem;
+}
+
+.hourly-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.hourly-list::-webkit-scrollbar-thumb {
+  background: #2a2a50;
+  border-radius: 4px;
+}
+
+.hourly-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--card-bg);
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+}
+
+.hourly-time {
+  font-size: 0.85rem;
+  color: #c4c4e0;
+  font-weight: 500;
+}
+
+.hourly-row img {
+  width: 24px;
+  height: 24px;
+}
+
+.hourly-temp {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.status-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 4rem;
+  background: var(--panel-bg);
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+  .metrics-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .daily-cards-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

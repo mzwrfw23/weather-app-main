@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Weather Now</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="brand">
+        <img src="./assets/images/logo.svg" alt="Weather Now Logo" class="brand-logo">
+      </div>
+      <button class="units-btn" id="unitsToggle">
+        <img src="./assets/images/icon-units.svg" alt="" class="units-icon">
+        <span id="unitLabel">°C</span>
+        <img src="./assets/images/icon-dropdown.svg" alt="" class="dropdown-arrow">
+      </button>
+    </header>
+
+    <div class="hero-section">
+      <h1 class="main-title">How’s the sky looking today?</h1>
+      <form class="search-form" id="searchForm">
+        <div class="input-wrapper">
+          <img src="./assets/images/icon-search.svg" alt="" class="search-icon">
+          <input type="text" id="searchInput" placeholder="Search for a place..." autocomplete="off" required>
+        </div>
+        <button type="submit" class="submit-btn">Search</button>
+      </form>
+    </div>
+
+    <div class="status-box hidden" id="loadingState">
+      <img src="./assets/images/icon-loading.svg" alt="Loading" class="spinner">
+      <p>Fetching weather data...</p>
+    </div>
+
+    <div class="status-box hidden" id="errorState">
+      <img src="./assets/images/icon-error.svg" alt="Error">
+      <p id="errorMessage">No results found. Please try again.</p>
+    </div>
+
+    <main class="dashboard hidden" id="weatherContent">
+      <div class="main-column">
+        <section class="current-card">
+          <div class="card-left">
+            <h2 id="cityName">--</h2>
+            <p id="currentDate">--</p>
+            <p class="condition-text" id="weatherCondition">--</p>
+          </div>
+          <div class="card-right">
+            <img src="./assets/images/icon-sunny.webp" alt="Weather condition" id="todayIcon" class="weather-big-icon">
+            <div class="big-temp"><span id="currentTemp">--</span>°</div>
+          </div>
+        </section>
+
+        <section class="metrics-row">
+          <div class="metric-card">
+            <span class="m-label">Feels Like</span>
+            <span class="m-value" id="feelsLike">--°</span>
+          </div>
+          <div class="metric-card">
+            <span class="m-label">Humidity</span>
+            <span class="m-value" id="humidity">--%</span>
+          </div>
+          <div class="metric-card">
+            <span class="m-label">Wind</span>
+            <span class="m-value" id="windSpeed">-- km/h</span>
+          </div>
+          <div class="metric-card">
+            <span class="m-label">Precipitation</span>
+            <span class="m-value" id="precipitation">0 mm</span>
+          </div>
+        </section>
+
+        <section class="daily-forecast">
+          <h3 class="section-title">Daily forecast</h3>
+          <div class="daily-cards-grid" id="forecastGrid"></div>
+        </section>
+      </div>
+
+      <aside class="sidebar-column">
+        <div class="hourly-box">
+          <div class="hourly-top">
+            <h3 class="section-title">Hourly forecast</h3>
+            <div class="select-wrapper">
+              <select id="daySelect" class="custom-select"></select>
+              <img src="./assets/images/icon-dropdown.svg" alt="" class="select-arrow">
+            </div>
+          </div>
+          <div class="hourly-list" id="hourlyGrid"></div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
